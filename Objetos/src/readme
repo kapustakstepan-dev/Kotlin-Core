@@ -1,0 +1,35 @@
+1.0_Task: Create an object with dtype document with these atributes:
+1.Autor
+2.Theme
+3.Extension(int)
+4.Optionally String() format
+
+1.1_Task: Create extendible classes for class Person(extends,polimorphism)
+create Class Persona -> name,surname,dni,mail
+            Class Student  -> nia,matricula(code)
+                  |
+                  -> showData()
+            Class Teacher -> hours(int),salary(int)
+                  |
+                  -> showData()
+            Class Director  -> workers_num(int)
+                  |
+                  - > showData()
+example code: public class Element extends( "","" ,"" ) implements I
+
+1.2Task:Create class School
+1.Realize nessesary methods to tuit students,and contract teachers.
+There can't be students with the same data that teachers(mail,dni)
+There can't be students with the same NIA code(student_code)
+The main code is written in controller(package) -> School
+
+
+Classes kotlin-objects:
+Model:
+    1.Director
+    2.Person
+    3.Student
+    4.Teacher
+    5.Document
+Controller:
+1.Scholl(main controller)
