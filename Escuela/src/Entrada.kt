@@ -1,5 +1,3 @@
-import kotlin.math.sign
-
 /* todo
     Realizar una aplicación que
     decida que alumno de la clase saldrá a mostrar la solución de los ejercicios

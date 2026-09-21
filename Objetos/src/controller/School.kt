@@ -4,64 +4,101 @@ import model.Director
 import model.Person
 import model.Student
 import model.Teacher
+import java.time.format.SignStyle
 import kotlin.system.exitProcess
 
 class School() {
 
-    lateinit var people: ArrayList<Person>
-    lateinit var teachers: ArrayList<Any>
-    lateinit var students: ArrayList<Student>
-
+    var people: ArrayList<Person> = arrayListOf()
     var director: Director? = null
 
-    init {
-        people = arrayListOf()
-        // estas listas no las voy a utilizar
-        teachers = arrayListOf()
-        students = arrayListOf()
-    }
-
-    // contratar un director
-    fun createDirector(director: Director) {
-        if (this.director != null) {
-            println("Ya tienes un director, le quieres despedir")
-            val despedir = readln()
-            if (despedir.equals("s", true)) {
-                println("director despedido")
-                this.director = director
-                return
-            } else {
-                println("Nos quedamos con el director")
-                return
-            }
-        } else {
-            this.director = director
-            return
-        }
-    }
-
-    fun addTeacher(teacher: Teacher) {
-        val peopleExist: Person? = people.find { it.dni.equals(teacher.dni, true) }
-        val directorExist: Boolean = director != null
-                && director?.dni.equals(teacher.dni, true)
-
-        if (peopleExist == null && !directorExist) {
-            people.add(teacher)
-        } else {
-            println("La persona que intentas agregar ya esta dada de alta con ese DNI")
-        }
-
-    }
-
-    private fun peopleExist(dni: String): Boolean {
+    /*
+    fun peopleExist(dni: String): Boolean {
         val peopleExist: Person? = people.find { it.dni.equals(dni, true) }
         val directorExist: Boolean = director != null
                 && director?.dni.equals(dni, true)
 
         return peopleExist != null && directorExist
+    }*/
+
+    private fun existPeople(dni: String, mail: String?): Boolean{
+        return people.any{it.dni.equals(dni, true) ||
+                it.email.equals(mail, true)}
     }
 
-    fun listStudent(): Unit {
+    private fun personaExistDni(dni: String): Boolean {
+        return people.any { it.dni.equals(dni, true)}
+    }
+
+    private fun findDirector(): Director? {
+        return people.find { it is Director } as? Director
+    }
+
+    fun createDirector(nuevoDirector: Director) {
+        val directorNow = findDirector()
+
+        if (directorNow !=null && directorNow.dni.equals(nuevoDirector.dni, true)){
+            println("Director esta registrado con el dni actual. ")
+            return
+        }
+
+        if (existPeople(nuevoDirector.dni, nuevoDirector.email)){
+            println("Ya existe una persona con el dni o correo de director. ")
+            return
+        }
+
+        if (this.director != null) {
+            println("Ya tienes un director, le quieres despedir")
+            val despedir = readln()
+            if (despedir.equals("si", true)) {
+                println("director despedido")
+                people.removeAll{it.dni.equals(directorNow?.dni, true)}
+                people.add(nuevoDirector)
+            } else {
+                println("Nos quedamos con el director")
+                return
+            }
+        } else {
+            people.add(nuevoDirector)
+            this.director = nuevoDirector
+            println("Director contratado. ")
+        }
+    }
+
+    fun addTeacher(teacher: Teacher) {
+        if (existPeople(teacher.dni, teacher.email)) {
+            println("Existe una persona con el dni o correo correspondinte. ")
+        } else {
+            println("Quieres contratar a este profesor? (si/no): ")
+            val hireTeacher = readln()
+            if (hireTeacher.equals("si", true)) {
+                people.add(teacher)
+                return
+            }
+            if (personaExistDni(teacher.dni)){
+                println("Profe esta agregado correctamente. ")
+            } else {
+                println("Ha producido un error. ")
+            }
+        }
+
+    }
+
+    fun addStudent(student: Student) {
+        if (existPeople(student.dni, student.email)){
+            println("Este dni o correo ya se usa o puedes aniadir. ")
+        } else {
+            people.add(student)
+            if (personaExistDni(student.dni)){
+                println("Alumno agregado correctamente. ")
+            } else {
+                println("Ha producido un error. ")
+            }
+        }
+
+    }
+
+    fun listStudent() {
         people.forEach {
             if (it is Student) {
                 it.mostrarDatos()
@@ -69,7 +106,7 @@ class School() {
         }
     }
 
-    fun listTeacger(): Unit {
+    fun listTeacher() {
         people.forEach {
             if (it is Teacher) {
                 it.mostrarDatos()
@@ -77,37 +114,8 @@ class School() {
         }
     }
 
+    fun matricularAlumnos() {
 
-    // realizar los metodos necesarios para matricular alumnos, contratar profesores.
-    // no puede haber alumnos, profesores, director con el mismo correo, dni,
-    // no puede haber alumnos con el mismo nia (autocopmletado)
-    // si usamos el array de people, cuando se contrata profesor, se tiene que ver que
-    // el objeto pasado es de tipo profesor
-    // realizar los metodos necesarios para listar
-    // alumnos
-    // profesores
-
-    // los alumnos tienen ademas de los datos que tienen ahora
-    // tienen notas: conjunto de numeros (1-10)
-
-    // hacer el metodo necesario para poder calificar a un alumno
-    // el metodo
-    // obtiene por parametros el dni de un profe
-    // obtiene por parametros el dni de un alumno
-    // obtiene por parametros la calificacion
-    // el metodo necesita comprobar errores
-    // me dices un dni de profesor que no esta
-    // me dices un dni de profesor que no es de un profesor
-    // me dices un dni de alumno que no es de un alumno
-    // me dices un dni de alumno que no esta
-    // hacer un metodo que calcule la media actual de un alumno
-    // el metodo
-    // obtiene como parametro u dni (comprobar errores)
-    // sacar por consola la media
-    // en caso de no tener notas -> 0.0
-
-
-
-
+    }
 
 }

@@ -33,3 +33,30 @@ Model:
     5.Document
 Controller:
 1.Scholl(main controller)
+
+1.3_Task: Remaining School Features and Grade Management
+
+1. Complete enrollment and hiring:
+   - Ensure unique DNI and Email across all people (Student, Teacher, Director).
+   - Ensure unique auto-generated NIA code for Students.
+   - Verify that the object type added to 'people' array is strictly Teacher or Student.
+
+2. Complete listing methods:
+   - Method to list all Students.
+   - Method to list all Teachers.
+
+3. Student Grading System:
+   - Add grades list (Double values between 1.0 - 10.0) to `Student` model.
+   - Implement grading method in `School`:
+     - Parameters: `teacherDni: String`, `studentDni: String`, `grade: Double`
+     - Required error handling:
+       * Check if teacher DNI exists.
+       * Check if person with teacher DNI is actually a Teacher.
+       * Check if student DNI exists.
+       * Check if person with student DNI is actually a Student.
+
+4. Calculate Average Grade:
+   - Implement method in `School`:
+     - Parameter: `studentDni: String`
+     - Validate if DNI exists and belongs to a Student.
+     - Print average grade to console (display `0.0` if no grades recorded).
