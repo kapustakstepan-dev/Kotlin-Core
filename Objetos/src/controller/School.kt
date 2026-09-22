@@ -4,8 +4,6 @@ import model.Director
 import model.Person
 import model.Student
 import model.Teacher
-import java.time.format.SignStyle
-import kotlin.system.exitProcess
 
 class School() {
 
@@ -114,7 +112,7 @@ class School() {
         }
     }
 
-    fun matricularAlumnos() {
+    fun calificarAlumno() {
 
     }
 

@@ -1,10 +1,8 @@
 import controller.School
 import model.Director
 import model.Document
-import model.Person
 import model.Student
 import model.Teacher
-import kotlin.math.exp
 import kotlin.random.Random
 
 
