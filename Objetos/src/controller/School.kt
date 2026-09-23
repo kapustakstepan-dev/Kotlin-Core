@@ -4,6 +4,8 @@ import model.Director
 import model.Person
 import model.Student
 import model.Teacher
+import java.time.format.SignStyle
+import kotlin.system.exitProcess
 
 class School() {
 
@@ -112,8 +114,53 @@ class School() {
         }
     }
 
-    fun calificarAlumno() {
+    fun matricularAlumnos() {
 
+    }
+
+    fun gradeStudent(teacherDni: String, studentDni: String, grade: Double) {
+        val teacher = people.find { it.dni.equals(teacherDni, true) }
+        if (teacher == null) {
+            println("No existe ningun profesor con ese dni. ")
+            return
+        }
+        if (teacher !is Teacher) {
+            println("La persona con ese dni no es un profesor. ")
+            return
+        }
+
+        val student = people.find { it.dni.equals(studentDni, true) }
+        if (student == null) {
+            println("No existe ningun alumno con ese dni. ")
+            return
+        }
+        if (student !is Student) {
+            println("La persona con ese dni no es un alumno. ")
+            return
+        }
+
+        if (grade < 1.0 || grade > 10.0) {
+            println("La nota debe estar entre 1.0 y 10.0. ")
+            return
+        }
+
+        student.grades.add(grade)
+        println("Nota anadida correctamente. ")
+    }
+
+    fun calculateAverageGrade(studentDni: String) {
+        val person = people.find { it.dni.equals(studentDni, true) }
+        if (person == null) {
+            println("No existe ningun alumno con ese dni. ")
+            return
+        }
+        if (person !is Student) {
+            println("La persona con ese dni no es un alumno. ")
+            return
+        }
+
+        val average = if (person.grades.isEmpty()) 0.0 else person.grades.average()
+        println("Nota media: $average")
     }
 
 }
