@@ -12,13 +12,5 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         }
 
-    override fun onStart() {
-        super.onStart()
-    }
-
-    override fun onResume() {
-        super.onResume()
-    }
-
 }
 
