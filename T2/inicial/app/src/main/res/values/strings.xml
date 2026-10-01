@@ -2,6 +2,8 @@
     <string name="app_name">My Application</string>
     <string name="app_saludo">Primera app android</string>
     <string name="app_saludar">Saludar</string>
+    <string name="app_limpiar">Limpiar</string>
+    <string name="app_salir">Salir</string>
     <string name="edit_hint">Introdce tu nombre</string>
 
 </resources>
