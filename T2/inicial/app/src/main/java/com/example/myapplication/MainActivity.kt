@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.buttonsalir.setOnClickListener(this)
         binding.buttonLimpiar.setOnClickListener(this)
 
+        Log.v("ciclo_vida", "Ejecutando el metodo onCreate")
 
     }
 
@@ -63,5 +64,40 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+        Log.v("ciclo_vida", "Ejecutando el metodo onStart")
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.v("ciclo_vida", "Ejecutando el metodo onResume")
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.v("ciclo_vida", "Ejecutando el metodo onPause")
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.v("ciclo_vida", "Ejecutando el metodo onStop")
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.v("ciclo_vida", "Ejecutando el metodo onDestroy")
+
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.v("ciclo_vida", "Ejecutando el metodo onRestart")
+
+    }
 }
 
