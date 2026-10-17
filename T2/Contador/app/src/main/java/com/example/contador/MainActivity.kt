@@ -40,15 +40,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun actions(){
         binding.buttonInc.setOnClickListener(this)
         binding.buttonDec.setOnClickListener(this)
-
+        binding.buttonRes?.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
 
         when(v!!.id){
+            binding.buttonRes?.id -> counter = 0
             binding.buttonInc.id ->{
                 if (counter == 15){
-                    Snackbar.make(binding.root, "Limite alcanzado", Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(binding.root, "Stepan, "+resources.getString(R.string.message_max), Snackbar.LENGTH_LONG).show()
                 } else {
                     counter++
                 }

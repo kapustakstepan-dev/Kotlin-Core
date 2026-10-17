@@ -17,7 +17,7 @@
         android:layout_weight="0.1"
         android:gravity="center"
         android:textSize="24sp"
-        android:text="Contador" />
+        android:text="@string/title" />
 
     <TextView
         android:id="@+id/textCounter"
