@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Login</string>
+    <string name="name">Nombre</string>
+    <string name="registro">Registro</string>
+
+    <string-array name="spiner_profile">
+        <item>Selecciona tu perfil</item>
+        <item>Administrdor</item>
+        <item>Usuario</item>
+    </string-array>
 </resources>

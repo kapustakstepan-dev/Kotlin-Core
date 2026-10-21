@@ -3,6 +3,7 @@ package com.example.login
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -27,12 +28,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnRegistro.setOnClickListener(this)
 
 
+
+
     }
+
+    override fun onRestart() {
+        super.onRestart()
+        binding.editMail.text.clear()
+        binding.editPass.text.clear()
+        binding.checkBox.isChecked = false
+        binding.radioGroup.clearCheck()
+    }
+
 
     override fun onClick(v: View?) {
        when(v!!.id){
            binding.btnRegistro.id->{
-
                val intent: Intent = Intent(this, RegistroActivity::class.java)
                startActivity(intent)
 

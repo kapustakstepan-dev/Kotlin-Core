@@ -33,7 +33,7 @@
 
     <EditText
         android:layout_marginTop="16dp"
-        android:id="@+id/password_correo"
+        android:id="@+id/editPass"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Password"
@@ -49,8 +49,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/password_correo"
-        app:layout_constraintTop_toBottomOf="@+id/password_correo">
+        app:layout_constraintEnd_toEndOf="@+id/editPass"
+        app:layout_constraintTop_toBottomOf="@+id/editPass">
 
         <RadioButton
             android:id="@+id/radioUsuario"
