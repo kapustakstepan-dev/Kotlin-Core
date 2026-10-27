@@ -8,8 +8,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.login.MainActivity
 import com.example.login.R
+import com.example.login.data.DataSet
 import com.example.login.databinding.ActivityMainBinding
 import com.example.login.databinding.ActivityRegistroBinding
+import com.example.login.model.User
+import com.google.android.material.snackbar.Snackbar
 
 class RegistroActivity : AppCompatActivity() {
 
@@ -30,6 +33,58 @@ class RegistroActivity : AppCompatActivity() {
 
         }
 
+        binding.btnRegistarse.setOnClickListener {
+            //hay algo no relleno o el spinner tiene index 0
+
+            var name: String = binding.editNombre.text.toString()
+            var surname: String = binding.editApellido.text.toString()
+            var mail: String = binding.editCorreo.text.toString()
+            var pass: String = binding.editPass.text.toString()
+            //var profileIndex:Int = binding.spinerPerfil.selectedItemPosition
+            //var profileItem: String =  binding.spinerPerfil.selectedItem.toString()
+
+            var profileIndex:Int = binding.spinerPerfil.selectedItemPosition
+            var profileItem: String = binding.spinerPerfil
+                .adapter.getItem(binding.spinerPerfil.selectedItemPosition).toString()
+
+            if  (name.isEmpty() || surname.isEmpty()
+                || mail.isEmpty() || pass.isEmpty() || profileIndex == 0){
+
+                Snackbar.make(binding.root, "Faltan datos por rellenar",
+                    Snackbar.LENGTH_SHORT).show()
+
+            } else {
+                //craer el usuario y meterlo en una lista
+                //0->admin, 1-> user
+                val user = User(name,surname,mail,pass,profileIndex-1)
+                if (DataSet.addUser(user)){
+                    Snackbar.make(binding.root, "Usuario creado, quieres login?",
+                        Snackbar.LENGTH_SHORT)
+                        .setAction("OK"){}
+                        //TODO terminar la accion con paso de datos
+                        .show()
+
+                }
+                //,ensaje confirmacion
+                //borrar todos
+                clearData()
+                //volver->preguntando
+
+            }
+
+
+
+        }
+
+
     }
+        fun clearData() {
+            binding.editNombre.text.clear()
+            binding.editApellido.text.clear()
+            binding.editCorreo.text.clear()
+            binding.editPass.text.clear()
+            binding.spinerPerfil.setSelection(0)
+
+        }
 
 }

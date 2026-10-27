@@ -14,8 +14,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/registro"
         android:layout_marginBottom="48dp"
+        android:text="@string/registro"
         android:textSize="48dp"
 
         />
@@ -24,7 +24,7 @@
         android:id="@+id/editNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="introduze el nombre"
+        android:hint="introduce el nombre"
         android:layout_marginBottom="16dp"
 
         />
@@ -32,7 +32,7 @@
         android:id="@+id/editApellido"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="introduze el apellido"
+        android:hint="introduce el apellido"
         android:layout_marginBottom="16dp"
 
         />
@@ -40,23 +40,24 @@
         android:id="@+id/editCorreo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="introduze el correo"
+        android:hint="introduce el correo"
         android:layout_marginBottom="16dp"
 
         />
     <EditText
         android:id="@+id/editPass"
+        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="introduze el pass"
+        android:hint="introduce el pass"
         android:layout_marginBottom="16dp"
 
         />
     <Spinner
+        android:id="@+id/spinerPerfil"
         android:entries="@array/spiner_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/SpinerPerfil"
         android:layout_marginBottom="16dp"
 
         />
