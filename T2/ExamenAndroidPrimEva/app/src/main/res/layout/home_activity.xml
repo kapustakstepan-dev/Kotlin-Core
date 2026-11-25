@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="16dp"
+    >
+
+
+    <TextView
+        android:id="@+id/txtNota1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"
+
+        android:text="@string/nota_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtNota2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"
+
+        android:text="@string/nota_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtNota1"
+        app:layout_constraintTop_toBottomOf="@+id/txtNota1" />
+
+    <TextView
+        android:id="@+id/txtNota3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"
+
+        android:text="@string/nota_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtNota2"
+        app:layout_constraintTop_toBottomOf="@+id/txtNota2" />
+
+    <TextView
+        android:id="@+id/txtFFE"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+
+        android:text="@string/ffe_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtNota3"
+        app:layout_constraintTop_toBottomOf="@+id/txtNota3" />
+
+    <TextView
+        android:id="@+id/txtProyecto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"
+
+        android:text="@string/proyecto_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtFFE"
+        app:layout_constraintTop_toBottomOf="@+id/txtFFE" />
+
+    <TextView
+        android:id="@+id/txtSuperado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/superado_o_no"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"
+
+        app:layout_constraintEnd_toEndOf="@+id/txtProyecto"
+        app:layout_constraintStart_toStartOf="@+id/txtProyecto"
+        app:layout_constraintTop_toBottomOf="@+id/txtProyecto" />
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/sonriente"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

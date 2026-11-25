@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editName"
+        android:hint="@string/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Spinner
+        android:id="@+id/spinnerNota1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:entries="@array/spinner_notas"
+        android:textAlignment="center"
+
+
+
+        app:layout_constraintEnd_toEndOf="@+id/editName"
+        app:layout_constraintStart_toStartOf="@+id/editName"
+        app:layout_constraintTop_toBottomOf="@+id/editName" />
+
+    <Spinner
+        android:id="@+id/spinnerNota2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:entries="@array/spinner_notas"
+        android:textAlignment="center"
+
+
+        app:layout_constraintEnd_toEndOf="@+id/spinnerNota1"
+        app:layout_constraintStart_toStartOf="@+id/spinnerNota1"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerNota1" />
+
+
+    <Spinner
+        android:id="@+id/spinnerNota3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:entries="@array/spinner_notas"
+        android:textAlignment="center"
+
+
+
+        app:layout_constraintEnd_toEndOf="@+id/spinnerNota2"
+        app:layout_constraintStart_toStartOf="@+id/spinnerNota2"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerNota2" />
+
+
+    <CheckBox
+        android:id="@+id/checkFFE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ffe"
+        android:layout_marginTop="64dp"
+
+
+        app:layout_constraintEnd_toEndOf="@+id/spinnerNota3"
+        app:layout_constraintStart_toStartOf="@+id/spinnerNota3"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerNota3" />
+
+
+
+    <CheckBox
+        android:id="@+id/checkProyect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/proyecto"
+        android:layout_marginTop="32dp"
+
+        app:layout_constraintEnd_toEndOf="@+id/checkFFE"
+        app:layout_constraintStart_toStartOf="@+id/checkFFE"
+        app:layout_constraintTop_toBottomOf="@+id/checkFFE" />
+
+
+    <Button
+        android:id="@+id/btnVer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/ver"
+        android:layout_margin="32dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

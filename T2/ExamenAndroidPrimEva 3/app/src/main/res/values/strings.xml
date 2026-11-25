@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name" translatable="false">ExamenAndroidPrimEva</string>
+    <string name="name" translatable="false">Name</string>
+    <string name="ffe" translatable="false">FFE</string>
+    <string name="proyecto" translatable="false">Proyecto</string>
+    <string name="ver" translatable="false">Ver</string>
+    <string name="nota_1">Nota: 1</string>
+    <string name="nota_2">Nota 2:</string>
+    <string name="nota_3">Nota 3:</string>
+    <string name="proyecto_home">Proyecto:</string>
+    <string name="ffe_home">FFE:</string>
+    <string name="superado_o_no">Superado o no:</string>
+
+
+    <string-array name="spinner_notas" >
+        <item name="nota5">5</item>
+        <item name="nota1">1</item>
+        <item name="nota2">2</item>
+        <item name="nota3">3</item>
+        <item name="nota4">4</item>
+        <item name="nota6">6</item>
+        <item name="nota7">7</item>
+        <item name="nota8">8</item>
+        <item name="nota9">9</item>
+        <item name="nota10">10</item>
+    </string-array>
+</resources>

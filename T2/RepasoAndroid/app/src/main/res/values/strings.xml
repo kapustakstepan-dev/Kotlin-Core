@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">RepasoAndroid</string>
+    <string name="name">Name</string>
+    <string name="mail">Mail</string>
+    <string name="pass">Pass</string>
+    <string name="volver">Volver</string>
+    <string name="registrar">Registrar</string>
+    <string name="login">Login</string>
+    <string name="registro">Registro</string>
+    <string name="name_Register">Name</string>
+    <string name="pass_register">Pass</string>
+    <string name="mail_register">Mail</string>
+    <string name="user">User</string>
+    <string name="admin">Admin</string>
+    <string name="volver_register">Volver</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="bienvenido">BienVenido</string>
+    <string name="ver_users">Ver users</string>
+    <string name="name_mail">Name - Mail</string>
+</resources>

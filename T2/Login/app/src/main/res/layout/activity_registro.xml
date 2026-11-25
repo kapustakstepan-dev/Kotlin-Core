@@ -18,6 +18,7 @@
         android:text="@string/registro"
         android:textSize="48dp"
 
+
         />
 
     <EditText

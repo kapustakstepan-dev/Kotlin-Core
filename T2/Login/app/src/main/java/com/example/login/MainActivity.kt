@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
        when(v!!.id){
            binding.btnRegistro.id->{
-               val intent: Intent = Intent(this, RegistroActivity::class.java)
+               val intent: Intent = Intent(applicationContext, RegistroActivity::class.java)
                startActivity(intent)
 
            }
@@ -53,11 +53,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                val user: User? = DataSet.getLogin(mail,pass)
                if (user!= null){
                    val intent = Intent(applicationContext, HomeActivity::class.java)
-                   val bundle = Bundle()
 
-                   //bundle.putSerializable("user", user)
                    intent.putExtra("user", user)
-
                    startActivity(intent)
 
                } else {

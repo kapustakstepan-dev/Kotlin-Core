@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">RepasoExamenAndroid</string>
+    <string name="coches_app">Coches APP</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="matricula">Matricula</string>
+    <string name="autonomia">Autonomia</string>
+    <string name="seguir">Seguir</string>
+    <string name="anio_de_matriculacion">Anio de matriculacion</string>
+    <string name="imagen_etiqueta">Imagen Etiqueta</string>
+    <string name="nombre_de_coche">Nombre de coche</string>
+    <string name="eliminar">Eliminar</string>
+    <string-array name="spinnerCombustible">
+        <item>Selecciona el tipo de combustible</item>
+        <item>Diesel</item>
+        <item>Hibrido</item>
+        <item>Gasolina</item>
+        <item>Electrico</item>
+    </string-array>
+</resources>
